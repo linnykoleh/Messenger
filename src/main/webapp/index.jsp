@@ -11,6 +11,6 @@
     <title>Title</title>
 </head>
 <body>
-    <a href="/webapi/myresource">Jersey resource</a>
+    <<p>JAX-RS</p>
 </body>
 </html>
