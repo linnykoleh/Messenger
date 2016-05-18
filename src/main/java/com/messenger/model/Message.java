@@ -12,7 +12,7 @@ public class Message {
     private String author;
 
     public Message() {
-        /*should be non-arguments constructor*/
+        /*should be added non-arguments constructor*/
     }
 
     public Message(long id, String message, String author) {
