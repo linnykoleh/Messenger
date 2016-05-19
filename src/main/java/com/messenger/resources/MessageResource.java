@@ -4,10 +4,7 @@ package com.messenger.resources;
 import com.messenger.model.Message;
 import com.messenger.service.MessageService;
 
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.PathParam;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
 import java.util.List;
 
@@ -32,7 +29,7 @@ public class MessageResource {
 
     @GET
     @Path("/{messageId}")
-    @Produces(MediaType.APPLICATION_XML)
+    @Produces(MediaType.APPLICATION_JSON)
     public Message getMessage(@PathParam("messageId") long messageId){
         /*
              http://localhost:8080/messenger/webapi/messages/5
@@ -47,6 +44,13 @@ public class MessageResource {
         */
 
         return service.getMessage(messageId);
+    }
+
+    @POST
+    @Consumes(MediaType.APPLICATION_JSON) /*ожидаем получить JSON Должен быть добавлен header Content-Type=application/json*/
+    @Produces(MediaType.APPLICATION_JSON)
+    public Message addMessage(Message message){
+        return service.addMessage(message);
     }
 
 
